@@ -19,15 +19,15 @@ class ProfileController extends Controller
         ];
         
         $cookieName = 'access_token';
-        $cookieValue = '123-XYZ';
+        $value = '123-XYZ';
         $minutes = 1;
         $path = '/';
         $domain = '127.0.0.1';
         $secure = false;
         $httpOnly = true;
 
-        Cookie::queue($cookieName, $cookieValue, $minutes, $path, $domain, $secure, $httpOnly);
+        Cookie::queue($cookieName, $value, $minutes, $path, $domain, $secure, $httpOnly);
 
-        return response()->json($data, 200)->withCookie(Cookie::make($cookieName, $cookieValue, $minutes, $path, $domain, $secure, $httpOnly));
+        return response()->json($data, 200)->withCookie(Cookie::make($cookieName, $value, $minutes, $path, $domain, $secure, $httpOnly));
     }
 }
